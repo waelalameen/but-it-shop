@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:buy_it_shop/services/store.dart';
 import '../constant.dart';
 
-
 class AddProduct extends StatelessWidget {
   static String id = 'AddProduct';
   final _store = Store();
@@ -48,49 +47,48 @@ class AddProduct extends StatelessWidget {
               },
               hint: 'Product Image Location',
             ),
-            SizedBox(height: 20,),
+            SizedBox(
+              height: 20,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               //crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 RaisedButton(
-                  shape:  RoundedRectangleBorder(
-                    borderRadius:  BorderRadius.circular(30.0),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30.0),
                   ),
                   elevation: 0,
-                  color:kSecondaryColor,
+                  color: kSecondaryColor,
                   child: Text('Add Product'),
-                  onPressed: ()
-                  {
-                    if(_globalKey.currentState.validate())
-                    {
+                  onPressed: () {
+                    if (_globalKey.currentState.validate()) {
                       _globalKey.currentState.save();
 
-                      _store.addProduct(Product(
-                        pName: _name,
-                        pCategory: _category,
-                        pDescription: _description,
-                        pLocation: _imageLocation,
-                        pPrice: _price,
-                        
-
-                      ));
+                      _store.addProduct(
+                        Product(
+                          pName: _name,
+                          pCategory: _category,
+                          pDescription: _description,
+                          pLocation: _imageLocation,
+                          pPrice: _price,
+                        ),
+                      );
                     }
                   },
                 ),
-                SizedBox(width: 40,),
-                 RaisedButton(
-                   shape:  RoundedRectangleBorder(
-                    borderRadius:  BorderRadius.circular(20.0),
+                SizedBox(
+                  width: 40,
+                ),
+                RaisedButton(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
                   ),
-                   elevation: 0,
-                  color:kSecondaryColor,
+                  elevation: 0,
+                  color: kSecondaryColor,
                   child: Text('Add Product'),
-                  onPressed: ()
-                  {
-                   
-                      _globalKey.currentState.reset();
-                    
+                  onPressed: () {
+                    _globalKey.currentState.reset();
                   },
                 ),
               ],

@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
       ],
           child: MaterialApp(
             debugShowCheckedModeBanner: false,
-          initialRoute: LoginScreen.id,
+          initialRoute: EditProduct.id,
           routes: {
             LoginScreen.id: (context) => LoginScreen(),
             SignupScreen.id: (context) => SignupScreen(),
